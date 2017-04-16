@@ -1,4 +1,4 @@
-package algorithms;
+
 import java.io.*;
 public class Number_Complement {
 	public static void main(String []args)throws IOException

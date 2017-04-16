@@ -1,4 +1,4 @@
-package algorithms;
+
 import java.util.*;
 public class String_to_integer {
 	public static void main(String[]args)
