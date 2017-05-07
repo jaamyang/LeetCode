@@ -1,16 +1,18 @@
 
 public class Binary_Tree_Tilt {
-	public int findTilt(TreeNode root) {
-		if(root == null)
-			return 0;
-		if(root.left == null && root.right == null )
-			return 0;
-		if(root.left == null)
-			return root.right.val;
-		if(root.right == null)
-			return root.left.val;
-		return Math.abs(root.left.val-root.right.val)+findTilt(root.left)+findTilt(root.right); 
-    }
+	int tilt = 0;
+	public int findTilt(TreeNode root) {   
+	    cir(root);
+	    return tilt;
+	}
+	public int cir(TreeNode root){
+	    if(root == null)	return 0;
+	    int left = cir(root.left);
+	    int right = cir(root.right);
+	    tilt += Math.abs(left - right);
+	    return left+right+root.val;
+	}
+ 
 	public static void main(String[] args){
 		TreeNode root = new TreeNode(1);
 		root.left = new TreeNode(2);
