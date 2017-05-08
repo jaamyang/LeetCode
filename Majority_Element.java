@@ -1,22 +1,26 @@
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
 
 public class Majority_Element {
 	public int majorityElement(int[] nums) {
-	ArrayList<Integer> a = new ArrayList<Integer>();
+	HashMap<Integer,Integer> a = new HashMap<Integer,Integer>();
+	int major = 0;
+	//int []a = new int[nums.length];
     for(int t:nums){
-        if(a.contains(t))
-            a.set(a.indexOf(t),((int)a.get(t))+1);
-        else
-            a.add(t);
+      if(a.containsKey(t))
+    	  a.replace(t, a.get(t)+1);
+      else
+    	  a.put(t, 1);
+      if(a.get(t)>nums.length/2)
+    	  major =  t;
     }
-    Integer []temp = new Integer[a.size()]; 
-    a.toArray(temp);
-    Arrays.sort(temp);
-    return temp[a.size()-1];
+   
+    return major;
 	}
 	public static void main(String[]args){
-		int []a ={2,2};
+		int []a ={1,2,3,4,5,7,7,7,7,7,7,7,7};
 		System.out.println(new Majority_Element().majorityElement(a));
 	}
 }
