@@ -2,7 +2,7 @@
 public class Find_the_Difference {
 	public static void main(String[] args){
 		String s = new String("asd");
-		String t = new String("asdf");
+		String t = new String("asd");
 		System.out.println(find(s,t));
 	}
 	/*采用异或的方法*/
