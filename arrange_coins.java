@@ -7,3 +7,4 @@ public class arrange_coins {
 		return (int)(-1+Math.sqrt((1+8*num)))/2;
 	}
 }
+// ruok????
